@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja" class="bg-white">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA&#45;142997649&#45;1"></script> -->
+    <!-- <script> -->
+    <!--   window.dataLayer = window.dataLayer || []; -->
+    <!--   function gtag(){dataLayer.push(arguments);} -->
+    <!--   gtag('js', new Date()); -->
+    <!--  -->
+    <!--   gtag('config', 'UA&#45;142997649&#45;1'); -->
+    <!-- </script> -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= gradeName %> | 表記ゆれ一覧 (7,378)</title>
+    <meta name="description" content="<%= gradeName %>までの漢字で構成される [<%= akasataName %>] の表記ゆれの一覧です。">
+    <link rel="apple-touch-icon" sizes="180x180" href="/spelling-variants-ja/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/spelling-variants-ja/favicon/favicon-48x48.png">
+    <link rel="manifest" href="/spelling-variants-ja/favicon/manifest.json">
+    <link rel="mask-icon" href="/spelling-variants-ja/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/spelling-variants-ja/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/spelling-variants-ja/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    <style>
+      html[data-theme="dark"] { filter: invert(1) hue-rotate(180deg) brightness(1.5); }
+    </style>
+  </head>
+  <body>
+    <nav id="header" class="navbar navbar-expand navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="/spelling-variants-ja/">
+          表記ゆれ一覧 <small>(7,378)</small>
+        </a>
+        <div class="navbar-nav">
+          <select onchange="changeGrade(this)" id="gradeOption" class="form-control form-control-sm">
+            <option <%= selected(grade, 0) %>>小1</option>
+            <option <%= selected(grade, 1) %>>小2</option>
+            <option <%= selected(grade, 2) %>>小3</option>
+            <option <%= selected(grade, 3) %>>小4</option>
+            <option <%= selected(grade, 4) %>>小5</option>
+            <option <%= selected(grade, 5) %>>小6</option>
+            <option <%= selected(grade, 6) %>>中1/2</option>
+            <option <%= selected(grade, 7) %>>中3</option>
+            <option <%= selected(grade, 8) %>>常用</option>
+            <option <%= selected(grade, 9) %>>常用外</option>
+          </select>
+          <button title="ダークモード切替" onclick="toggleDarkMode()" class="ml-2 close">🌓</button>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <noscript>
+        <div class="alert alert-warning">JavaScript を ON にしてください</div>
+      </noscript>
+      <div>
+        <p><%= gradeName %>までの漢字で構成される [<%= akasataName %>] の表記ゆれ一覧です。</p>
+      </div>
+      <div class="card">
+        <div class="card-header"><%= gradeName %>の語順リスト</div>
+        <div class="card-body text-center">
+          <%- toNav(grade, akasataNames, dirNames) %>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">表記ゆれ一覧</div>
+        <div class="card-body d-flex flex-wrap">
+          <%- toSection('表記ゆれ', variants) %>
+        </div>
+      </div>
+    </div>
+    <footer class="pt-4 alert text-center">
+      <div>
+        <a class="px-1" href="/">Home</a>
+        <a class="px-1" href="/terms/">Terms</a>
+        <a class="px-1" href="https://github.com/marmooo/spelling-variants-ja">Contact</a>
+      </div>
+      <div class="text-muted">&copy; <a href="https://github.com/marmooo">marmooo</a>. All Rights Reserved.</div>
+    </footer>
+    <script src="/spelling-variants-ja/page.js"></script>
+  </body>
+</html>

@@ -2,14 +2,14 @@
 <html lang="ja" class="bg-white">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA&#45;142997649&#45;1"></script> -->
-    <!-- <script> -->
-    <!--   window.dataLayer = window.dataLayer || []; -->
-    <!--   function gtag(){dataLayer.push(arguments);} -->
-    <!--   gtag('js', new Date()); -->
-    <!--  -->
-    <!--   gtag('config', 'UA&#45;142997649&#45;1'); -->
-    <!-- </script> -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142997649-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-142997649-1');
+    </script>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>小学6年生 | 表記ゆれ一覧 (7,378)</title>
@@ -28,29 +28,31 @@
     </style>
   </head>
   <body>
-    <nav id="header" class="navbar navbar-expand navbar-light">
-      <div class="container">
-        <a class="navbar-brand" href="/spelling-variants-ja/">
-          表記ゆれ一覧 <small>(7,378)</small>
-        </a>
-        <div class="navbar-nav">
-          <select onchange="changeGrade(this)" id="gradeOption" class="form-control form-control-sm">
-            <option >小1</option>
-            <option >小2</option>
-            <option >小3</option>
-            <option >小4</option>
-            <option >小5</option>
-            <option selected>小6</option>
-            <option >中1/2</option>
-            <option >中3</option>
-            <option >常用</option>
-            <option >常用外</option>
-          </select>
-          <button title="ダークモード切替" onclick="toggleDarkMode()" class="ml-2 close">🌓</button>
+    <header>
+      <nav class="navbar navbar-expand navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="/spelling-variants-ja/">
+            表記ゆれ一覧 <small>(7,378)</small>
+          </a>
+          <div class="navbar-nav">
+            <select onchange="changeGrade(this)" id="gradeOption" class="form-control form-control-sm" aria-label="学年">
+              <option >小1</option>
+              <option >小2</option>
+              <option >小3</option>
+              <option >小4</option>
+              <option >小5</option>
+              <option selected>小6</option>
+              <option >中1/2</option>
+              <option >中3</option>
+              <option >常用</option>
+              <option >常用外</option>
+            </select>
+            <button title="ダークモード切替" onclick="toggleDarkMode()" class="ml-2 close">🌓</button>
+          </div>
         </div>
-      </div>
-    </nav>
-    <div class="container">
+      </nav>
+    </header>
+    <main class="container">
       <noscript>
         <div class="alert alert-warning">JavaScript を ON にしてください</div>
       </noscript>
@@ -3413,7 +3415,7 @@
 
         </div>
       </div>
-    </div>
+    </main>
     <footer class="pt-4 alert text-center">
       <div>
         <a class="px-1" href="/">Home</a>

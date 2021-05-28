@@ -56,7 +56,7 @@ function generateAiueo() {
 }
 
 function toNav(grade, akasataNames) {
-  var html = '\n<ul class="row d-flex justify-content-center list-unstyled">\n';
+  var html = '\n<ul class="d-flex flex-wrap justify-content-center list-unstyled">\n';
   for (var i=0; i<akasataNames.length; i++) {
     var url = '/spelling-variants-ja/' + dirNames[grade-1] + '/' + akasataNames[i] + '/';
     html += '<li class="px-1"><a href="' + url + '">' + akasataNames[i] + '</a></li>\n';
@@ -85,7 +85,7 @@ function toSection(mode, variants) {
 
 function toDef(yomi, words, mode) {
   var count = 0;
-  var html = '\n<dl class="row m-0">';
+  var html = '\n<dl class="d-flex flex-wrap m-0">';
   html += '<dt class="px-1">' + yomi + '</dt>';
   words.forEach(word => {
     if (mode == '同音異字') {

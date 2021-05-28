@@ -22,7 +22,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/spelling-variants-ja/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <style>
       html[data-theme="dark"] { filter: invert(1) hue-rotate(180deg); }
       @-moz-document url-prefix() { html[data-theme="dark"] { background-color:black; } }
@@ -37,7 +37,7 @@
             表記ゆれ一覧 <small>(7,378)</small>
           </a>
           <div class="navbar-nav">
-            <select onchange="changeGrade(this)" id="gradeOption" class="form-control form-control-sm" aria-label="学年">
+            <select onchange="changeGrade(this)" id="gradeOption" class="form-select form-select-sm" aria-label="学年">
               <option >小1</option>
               <option selected>小2</option>
               <option >小3</option>
@@ -49,7 +49,7 @@
               <option >常用</option>
               <option >常用外</option>
             </select>
-            <button title="ダークモード切替" onclick="toggleDarkMode()" class="ml-2 close">🌓</button>
+            <button title="ダークモード切替" onclick="toggleDarkMode()" class="fs-4 btn p-0 ms-1">🌓</button>
           </div>
         </div>
       </nav>
@@ -65,7 +65,7 @@
         <div class="card-header">小学2年生の語順リスト</div>
         <div class="card-body text-center">
           
-<ul class="row d-flex justify-content-center list-unstyled">
+<ul class="d-flex flex-wrap justify-content-center list-unstyled">
 <li class="px-1"><a href="/spelling-variants-ja/小2/あ〜お/">あ〜お</a></li>
 <li class="px-1"><a href="/spelling-variants-ja/小2/か〜こ/">か〜こ</a></li>
 <li class="px-1"><a href="/spelling-variants-ja/小2/さ〜そ/">さ〜そ</a></li>
@@ -85,13 +85,13 @@
         <div class="card-body d-flex flex-wrap">
           
 
-<dl class="row m-0"><dt class="px-1">さいばしる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">さいばしる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=才走るとは" target="_blank" rel="noopener noreferer">才走る</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=才ばしるとは" target="_blank" rel="noopener noreferer">才ばしる</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">さきだつ</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">さきだつ</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=先立つとは" target="_blank" rel="noopener noreferer">先立つ</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=先だつとは" target="_blank" rel="noopener noreferer">先だつ</a>
@@ -99,85 +99,85 @@
 <a href="https://www.google.com/search?q=さき立つとは" target="_blank" rel="noopener noreferer">さき立つ</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">さきだてる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">さきだてる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=先立てるとは" target="_blank" rel="noopener noreferer">先立てる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=先立るとは" target="_blank" rel="noopener noreferer">先立る</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">さきばしる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">さきばしる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=先走るとは" target="_blank" rel="noopener noreferer">先走る</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=先ばしるとは" target="_blank" rel="noopener noreferer">先ばしる</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">さしあたる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">さしあたる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=さし当たるとは" target="_blank" rel="noopener noreferer">さし当たる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=さし当るとは" target="_blank" rel="noopener noreferer">さし当る</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しいれる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しいれる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=し入れるとは" target="_blank" rel="noopener noreferer">し入れる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=強いれるとは" target="_blank" rel="noopener noreferer">強いれる</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しかくい</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しかくい</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=四角いとは" target="_blank" rel="noopener noreferer">四角い</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=四角くいとは" target="_blank" rel="noopener noreferer">四角くい</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しぐれる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しぐれる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=時雨れるとは" target="_blank" rel="noopener noreferer">時雨れる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=時雨るとは" target="_blank" rel="noopener noreferer">時雨る</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">したしい</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">したしい</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=親しいとは" target="_blank" rel="noopener noreferer">親しい</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=親いとは" target="_blank" rel="noopener noreferer">親い</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">したしむ</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">したしむ</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=親しむとは" target="_blank" rel="noopener noreferer">親しむ</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=親むとは" target="_blank" rel="noopener noreferer">親む</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">したしめる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">したしめる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=親しめるとは" target="_blank" rel="noopener noreferer">親しめる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=親めるとは" target="_blank" rel="noopener noreferer">親める</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">したまわる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">したまわる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=下回るとは" target="_blank" rel="noopener noreferer">下回る</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=下まわるとは" target="_blank" rel="noopener noreferer">下まわる</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しらじらしい</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しらじらしい</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=白々しいとは" target="_blank" rel="noopener noreferer">白々しい</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=白白しいとは" target="_blank" rel="noopener noreferer">白白しい</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しらちゃける</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しらちゃける</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=白茶けるとは" target="_blank" rel="noopener noreferer">白茶ける</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=白ちゃけるとは" target="_blank" rel="noopener noreferer">白ちゃける</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しらっちゃける</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しらっちゃける</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=白っちゃけるとは" target="_blank" rel="noopener noreferer">白っちゃける</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=白っ茶けるとは" target="_blank" rel="noopener noreferer">白っ茶ける</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しりあう</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しりあう</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=知り合うとは" target="_blank" rel="noopener noreferer">知り合う</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=知合うとは" target="_blank" rel="noopener noreferer">知合う</a>
@@ -187,7 +187,7 @@
 <a href="https://www.google.com/search?q=知り会うとは" target="_blank" rel="noopener noreferer">知り会う</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">しりあえる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">しりあえる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=知り合えるとは" target="_blank" rel="noopener noreferer">知り合える</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=知合えるとは" target="_blank" rel="noopener noreferer">知合える</a>
@@ -199,73 +199,73 @@
 <a href="https://www.google.com/search?q=知りあえるとは" target="_blank" rel="noopener noreferer">知りあえる</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">すくない</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">すくない</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=少いとは" target="_blank" rel="noopener noreferer">少い</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=少ないとは" target="_blank" rel="noopener noreferer">少ない</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">すくねえ</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">すくねえ</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=少えとは" target="_blank" rel="noopener noreferer">少え</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=少ねえとは" target="_blank" rel="noopener noreferer">少ねえ</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">すくみあがる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">すくみあがる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=すくみ上がるとは" target="_blank" rel="noopener noreferer">すくみ上がる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=すくみ上るとは" target="_blank" rel="noopener noreferer">すくみ上る</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">すりあわせる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">すりあわせる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=すり合せるとは" target="_blank" rel="noopener noreferer">すり合せる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=すり合わせるとは" target="_blank" rel="noopener noreferer">すり合わせる</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">ずうずうしい</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">ずうずうしい</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=図々しいとは" target="_blank" rel="noopener noreferer">図々しい</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=図図しいとは" target="_blank" rel="noopener noreferer">図図しい</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">ずぶてえ</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">ずぶてえ</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=ず太えとは" target="_blank" rel="noopener noreferer">ず太え</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=図太えとは" target="_blank" rel="noopener noreferer">図太え</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">ずぶとい</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">ずぶとい</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=図太いとは" target="_blank" rel="noopener noreferer">図太い</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=ず太いとは" target="_blank" rel="noopener noreferer">ず太い</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">せきたてる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">せきたてる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=せき立てるとは" target="_blank" rel="noopener noreferer">せき立てる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=せき立るとは" target="_blank" rel="noopener noreferer">せき立る</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">せつない</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">せつない</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=切ないとは" target="_blank" rel="noopener noreferer">切ない</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=切いとは" target="_blank" rel="noopener noreferer">切い</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">せつねえ</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">せつねえ</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=切えとは" target="_blank" rel="noopener noreferer">切え</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=切ねえとは" target="_blank" rel="noopener noreferer">切ねえ</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">せりあがる</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">せりあがる</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=せり上がるとは" target="_blank" rel="noopener noreferer">せり上がる</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=せり上るとは" target="_blank" rel="noopener noreferer">せり上る</a>
 </dd></dl>
 
-<dl class="row m-0"><dt class="px-1">そらぞらしい</dt><dd class="px-1 m-0">
+<dl class="d-flex flex-wrap m-0"><dt class="px-1">そらぞらしい</dt><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=空々しいとは" target="_blank" rel="noopener noreferer">空々しい</a>
 </dd><dd class="px-1 m-0">
 <a href="https://www.google.com/search?q=空空しいとは" target="_blank" rel="noopener noreferer">空空しい</a>
@@ -282,7 +282,7 @@
         <a class="px-1" href="/terms/">Terms</a>
         <a class="px-1" href="https://github.com/marmooo/spelling-variants-ja">Contact</a>
       </div>
-      <div class="text-muted">&copy; <a href="https://github.com/marmooo">marmooo</a>. All Rights Reserved.</div>
+      <div class="text-muted">&copy; <a href="https://github.com/marmooo">marmooo</a></div>
     </footer>
     <script src="/spelling-variants-ja/page.js"></script>
   </body>

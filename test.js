@@ -1,6 +1,5 @@
-const SpellingVariantsJa = require('.');
+import { SpellingVariantsJa } from "./mod.js";
 
-var dict = new SpellingVariantsJa();
-console.log('つく --> ' + dict.get('つく'));
-console.log('まきちらす --> ' + dict.get('まきちらす'));
-
+const dict = await SpellingVariantsJa.load();
+console.log("つく --> " + dict.get("つく"));
+console.log("まきちらす --> " + dict.get("まきちらす"));

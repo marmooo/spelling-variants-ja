@@ -3,9 +3,6 @@
   "version": "0.0.2",
   "description": "Japanese spelling variants dictionary.",
   "main": "main.js",
-  "dependencies": {
-    "read-each-line-sync": "^1.0.5"
-  },
   "devDependencies": {
     "ejs": "^3.1.5"
   },

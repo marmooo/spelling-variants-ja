@@ -1,14 +1,12 @@
-const fs = require("fs");
-const readline = require("readline");
+import * as path from "https://deno.land/std/path/mod.ts";
+import { readLines } from "https://deno.land/std/io/mod.ts";
 
 class SpellingVariantsJa {
   static async load() {
     const dict = {};
-    const fileReader = fs.createReadStream(
-      __dirname + "/spelling-variants.csv",
-    );
-    const rl = readline.createInterface({ input: fileReader });
-    for await (const line of rl) {
+    const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
+    const fileReader = await Deno.open(__dirname + "/spelling-variants.csv");
+    for await (const line of readLines(fileReader)) {
       const arr = line.split(",");
       const word = arr[0];
       const yomis = arr.slice(1);
@@ -28,4 +26,4 @@ class SpellingVariantsJa {
   }
 }
 
-module.exports = SpellingVariantsJa;
+export { SpellingVariantsJa };

@@ -2,11 +2,12 @@ const fs = require("fs");
 const readline = require("readline");
 
 class SpellingVariantsJa {
-  static async load() {
+  static async load(filepath) {
     const dict = {};
-    const fileReader = fs.createReadStream(
-      __dirname + "/spelling-variants.csv",
-    );
+    if (!filepath) {
+      filepath = __dirname + "/spelling-variants.csv";
+    }
+    const fileReader = fs.createReadStream(filepath);
     const rl = readline.createInterface({ input: fileReader });
     for await (const line of rl) {
       const arr = line.split(",");

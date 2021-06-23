@@ -13,9 +13,10 @@ Japanese spelling variants dictionary.
 ## Usage (Deno)
 
 ```
+// git clone https://github.com/marmooo/spelling-variants-ja
 import { SpellingVariantsJa } from "spelling-variants-ja/mod.js";
 
-const dict = await SpellingVariantsJa.load();
+const dict = await SpellingVariantsJa.load("spelling-variants-ja/spelling-variants.csv");
 dict.get('つく');  // --> [付く, 点く, etc.]
 ```
 

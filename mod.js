@@ -1,11 +1,33 @@
-import * as path from "https://deno.land/std/path/mod.ts";
 import { readLines } from "https://deno.land/std/io/mod.ts";
 
 class SpellingVariantsJa {
-  static async load() {
+  static async fetch(url) {
+    const dict = await fetch(url)
+      .then((response) => response.text())
+      .then((text) => {
+        const d = {};
+        text.split("\n").forEach((line) => {
+          if (!line) return;
+          const arr = line.split(",");
+          const word = arr[0];
+          const yomis = arr.slice(1);
+          d[word] = yomis;
+        });
+        return d;
+      }).catch((e) => {
+        console.log(e);
+      });
+    const spellingVariantsJa = new SpellingVariantsJa();
+    spellingVariantsJa.dict = dict;
+    return spellingVariantsJa;
+  }
+
+  static async load(filepath) {
     const dict = {};
-    const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
-    const fileReader = await Deno.open(__dirname + "/spelling-variants.csv");
+    if (!filepath) {
+      filepath = "./spelling-variants-ja/spelling-variants.csv";
+    }
+    const fileReader = await Deno.open(filepath);
     for await (const line of readLines(fileReader)) {
       const arr = line.split(",");
       const word = arr[0];

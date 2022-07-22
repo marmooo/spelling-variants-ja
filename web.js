@@ -118,7 +118,7 @@ function toSection(mode, variants) {
 
 function toDef(yomi, words, mode) {
   let count = 0;
-  let html = '\n<dl class="d-flex flex-wrap m-0">';
+  let html = '\n<dl class="d-flex flex-wrap m-0 notranslate">';
   html += '<dt class="px-1">' + yomi + "</dt>";
   words.forEach((word) => {
     if (mode == "同音異字") {

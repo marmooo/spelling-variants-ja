@@ -1,11 +1,11 @@
 const dirNames = ["小1", "小2", "小3", "小4", "小5", "小6", "中2", "中3", "常用", "常用外"];
+loadConfig();
 
 function loadConfig() {
   if (localStorage.getItem("darkMode") == 1) {
     document.documentElement.dataset.theme = "dark";
   }
 }
-loadConfig();
 
 function toggleDarkMode() {
   if (localStorage.getItem("darkMode") == 1) {
@@ -18,10 +18,8 @@ function toggleDarkMode() {
 }
 
 function changeGrade() {
-  var dir = dirNames[this.selectedIndex];
-  var arr = location.pathname.split("/");
-  arr[arr.length - 3] = dir;
-  location.href = arr.join("/");
+  const dir = dirNames[this.selectedIndex];
+  location.href = `/spelling-variants-ja/${dir}/`;
 }
 
 document.getElementById("toggleDarkMode").onclick = toggleDarkMode;

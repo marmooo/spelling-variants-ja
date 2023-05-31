@@ -218,6 +218,8 @@ for (let i = 0; i < index.length - 1; i++) {
   }
 }
 
+const allVariants = Deno.readTextFileSync("spelling-variants.csv");
+const num = allVariants.trimEnd().split("\n").length;
 const template = Deno.readTextFileSync("page.eta");
 for (let g = 1; g < learnedKanjis.length + 1; g++) {
   const dir = "src/" + dirNames[g - 1];
@@ -226,6 +228,7 @@ for (let g = 1; g < learnedKanjis.length + 1; g++) {
     const akasataDir = dir + "/" + akasataNames[i];
     Deno.mkdirSync(akasataDir, { recursive: true });
     const html = Eta.render(template, {
+      num: num.toLocaleString("ja-JP"),
       grade: g,
       gradeName: gradeNames[g - 1],
       variants: data[g][i],
@@ -237,7 +240,6 @@ for (let g = 1; g < learnedKanjis.length + 1; g++) {
       toSection: toSection,
       selected: selected,
     });
-    console.log(akasataDir + "/index.html");
     Deno.writeTextFileSync(akasataDir + "/index.html", html);
   }
 }

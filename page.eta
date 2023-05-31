@@ -3,11 +3,11 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%= gradeName %>までの漢字で構成される [<%= akasataName %>] の表記ゆれの一覧です。">
-    <title><%= gradeName %> | 表記ゆれ一覧 (7,283)</title>
-    <meta property="og:title" content="<%= gradeName %> | 表記ゆれ一覧 (7,283)">
+    <meta name="description" content="<%= it.gradeName %>までの漢字で構成される [<%= it.akasataName %>] の表記ゆれの一覧です。">
+    <title><%= it.gradeName %> | 表記ゆれ一覧 (7,283)</title>
+    <meta property="og:title" content="<%= it.gradeName %> | 表記ゆれ一覧 (7,283)">
     <meta property="og:site_name" content="表記ゆれ一覧 (7,283)">
-    <meta property="og:description" content="<%= gradeName %>までの漢字で構成される [<%= akasataName %>] の表記ゆれの一覧です。">
+    <meta property="og:description" content="<%= it.gradeName %>までの漢字で構成される [<%= it.akasataName %>] の表記ゆれの一覧です。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://marmooo.github.io/spelling-variants-ja/">
     <meta property="og:image" content="https://marmooo.github.io/spelling-variants-ja/favicon/apple-touch-icon.png">
@@ -41,16 +41,16 @@
           </a>
           <div class="navbar-nav">
             <select id="gradeOption" class="form-select form-select-sm" aria-label="学年">
-              <option <%= selected(grade, 0) %>>小1</option>
-              <option <%= selected(grade, 1) %>>小2</option>
-              <option <%= selected(grade, 2) %>>小3</option>
-              <option <%= selected(grade, 3) %>>小4</option>
-              <option <%= selected(grade, 4) %>>小5</option>
-              <option <%= selected(grade, 5) %>>小6</option>
-              <option <%= selected(grade, 6) %>>中1/2</option>
-              <option <%= selected(grade, 7) %>>中3</option>
-              <option <%= selected(grade, 8) %>>常用</option>
-              <option <%= selected(grade, 9) %>>常用外</option>
+              <option <%= it.selected(it.grade, 0) %>>小1</option>
+              <option <%= it.selected(it.grade, 1) %>>小2</option>
+              <option <%= it.selected(it.grade, 2) %>>小3</option>
+              <option <%= it.selected(it.grade, 3) %>>小4</option>
+              <option <%= it.selected(it.grade, 4) %>>小5</option>
+              <option <%= it.selected(it.grade, 5) %>>小6</option>
+              <option <%= it.selected(it.grade, 6) %>>中1/2</option>
+              <option <%= it.selected(it.grade, 7) %>>中3</option>
+              <option <%= it.selected(it.grade, 8) %>>常用</option>
+              <option <%= it.selected(it.grade, 9) %>>常用外</option>
             </select>
             <button title="ダークモード切替" id="toggleDarkMode" class="fs-4 btn p-0 ms-1" type="button">🌓</button>
           </div>
@@ -62,18 +62,18 @@
         <div class="alert alert-warning">JavaScript を ON にしてください</div>
       </noscript>
       <div>
-        <p><%= gradeName %>までの漢字で構成される [<%= akasataName %>] の表記ゆれ一覧です。</p>
+        <p><%= it.gradeName %>までの漢字で構成される [<%= it.akasataName %>] の表記ゆれ一覧です。</p>
       </div>
       <div class="card">
-        <div class="card-header"><%= gradeName %>の語順リスト</div>
+        <div class="card-header"><%= it.gradeName %>の語順リスト</div>
         <div class="card-body text-center notranslate">
-          <%- toNav(grade, akasataNames, dirNames) %>
+          <%~ it.toNav(it.grade, it.akasataNames, it.dirNames) %>
         </div>
       </div>
       <div class="card">
         <div class="card-header">表記ゆれ一覧</div>
         <div class="card-body d-flex flex-wrap">
-          <%- toSection('表記ゆれ', variants) %>
+          <%~ it.toSection('表記ゆれ', it.variants) %>
         </div>
       </div>
     </main>

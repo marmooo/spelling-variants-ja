@@ -10,7 +10,7 @@ await build({
   },
   package: {
     name: "spelling-variants-ja",
-    version: "0.1.1",
+    version: "0.1.2",
     description: "Japanese spelling variants dictionary.",
     license: "Apache-2.0",
     main: "mod.js",

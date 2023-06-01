@@ -89,7 +89,7 @@ function getGrade(word) {
         break;
       }
     }
-    if (grade == 0 && /[\u4E00-\u9FFF]/.test(word[i])) {
+    if (grade == 0 && /[\u4E00-\u9FFF々]/.test(word[i])) {
       grade = gradeByKanjis.length;
     }
     if (maxGrade < grade) maxGrade = grade;

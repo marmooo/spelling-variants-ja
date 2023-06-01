@@ -114,12 +114,13 @@ function toSection(mode, variants) {
   let html = "\n";
   let count = 0;
   variants.forEach((variant) => {
-    const [yomi, words] = variant;
-    const def = toDef(yomi, words, mode);
+    const [yomi, word, surfaces] = variant;
+    const def = toDef(yomi, word, surfaces);
     if (def.length != 0) {
       html += def;
       count += 1;
     }
+    if (yomi == "あいあい") console.log(html);
   });
   if (count == 0) {
     html += "<p>この年次に習う" + mode + "はありません。</p>";
@@ -127,29 +128,14 @@ function toSection(mode, variants) {
   return html;
 }
 
-function toDef(yomi, words, mode) {
-  let count = 0;
+function toDef(yomi, word, surfaces) {
   let html = '\n<dl class="d-flex flex-wrap m-0 notranslate">';
-  html += '<dt class="px-1">' + yomi + "</dt>";
-  words.forEach((word) => {
-    if (mode == "同音異字") {
-      if (!/[ぁ-ん]/.test(word)) {
-        count += 1;
-        html += '<dd class="px-1 m-0">' + toLink(word) + "</dd>";
-      }
-    } else {
-      if (/[ぁ-ん]/.test(word)) {
-        count += 1;
-        html += '<dd class="px-1 m-0">' + toLink(word) + "</dd>";
-      }
-    }
+  html += `<dt class="px-1">${yomi} (${word})</dt>`;
+  surfaces.forEach((surface) => {
+    html += '<dd class="px-1 m-0">' + toLink(surface) + "</dd>";
   });
   html += "</dl>\n";
-  if (count == 0) {
-    return "";
-  } else {
-    return html;
-  }
+  return html;
 }
 
 function toLink(word) {
@@ -174,8 +160,9 @@ for await (const line of readLines(fileReader)) {
   if (!line) continue;
   const arr = line.split(",");
   const yomi = arr[0];
-  const words = arr.slice(1);
-  variants.push([yomi, words]);
+  const word = arr[1];
+  const surfaces = arr.slice(2);
+  variants.push([yomi, word, surfaces]);
 }
 
 const akasatana = "あかさたなはまやらわ";
@@ -203,16 +190,17 @@ for (let i = 0; i < data.length; i++) {
 for (let i = 0; i < index.length - 1; i++) {
   for (let j = index[i]; j < index[i + 1]; j++) {
     const yomi = variants[j][0];
-    const words = variants[j][1];
+    const word = variants[j][1];
+    const surfaces = variants[j][2];
     for (let g = 1; g < gradeByKanjis.length + 1; g++) {
       const candidates = [];
-      words.forEach((word) => {
-        if (getGrade(word) <= g) {
-          candidates.push(word);
+      surfaces.forEach((surface) => {
+        if (getGrade(surface) <= g) {
+          candidates.push(surface);
         }
       });
       if (candidates.length > 1) {
-        data[g][i].push([yomi, candidates]);
+        data[g][i].push([yomi, word, candidates]);
       }
     }
   }

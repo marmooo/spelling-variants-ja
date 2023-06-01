@@ -6,12 +6,17 @@ class SpellingVariantsJa {
       .then((response) => response.text())
       .then((text) => {
         const d = {};
-        text.split("\n").forEach((line) => {
-          if (!line) return;
+        text.trimEnd().split("\n").forEach((line) => {
           const arr = line.split(",");
-          const word = arr[0];
-          const yomis = arr.slice(1);
-          d[word] = yomis;
+          const yomi = arr[0];
+          const word = arr[1];
+          const surfaces = arr.slice(2);
+          if (d[yomi]) {
+            d[yomi][word] = surfaces;
+          } else {
+            d[yomi] = {};
+            d[yomi][word] = surfaces;
+          }
         });
         return d;
       }).catch((e) => {
@@ -30,10 +35,17 @@ class SpellingVariantsJa {
     const fileReader = await Deno.open(filepath);
     for await (const line of readLines(fileReader)) {
       const arr = line.split(",");
-      const word = arr[0];
-      const yomis = arr.slice(1);
-      dict[word] = yomis;
+      const yomi = arr[0];
+      const word = arr[1];
+      const surfaces = arr.slice(2);
+      if (dict[yomi]) {
+        dict[yomi][word] = surfaces;
+      } else {
+        dict[yomi] = {};
+        dict[yomi][word] = surfaces;
+      }
     }
+    fileReader.close();
     const spellingVariantsJa = new SpellingVariantsJa();
     spellingVariantsJa.dict = dict;
     return spellingVariantsJa;

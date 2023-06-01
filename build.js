@@ -25,7 +25,7 @@ function getWord(line) {
   const abc = arr[14];
   if (leftId == "-1") return;
   if (!/[\u4E00-\u9FFF々]/.test(surface)) return;
-  if (!/^[ぁ-ゖァ-ヶー\u4E00-\u9FFF々]+$/.test(word)) return;
+  if (!/^[ぁ-ゖァ-ヶー\u4E00-\u9FFF々]+$/.test(surface)) return;
   if (pos1 == "名詞") {
     if (pos2 == "固有名詞") return;
     return [yomi, surface, word];

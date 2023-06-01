@@ -19,7 +19,7 @@ function toggleDarkMode() {
 
 function changeGrade() {
   const dir = dirNames[this.selectedIndex];
-  location.href = `/spelling-variants-ja/${dir}/`;
+  location.href = `/spelling-variants-ja/${dir}/あ〜お/`;
 }
 
 document.getElementById("toggleDarkMode").onclick = toggleDarkMode;

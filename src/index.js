@@ -17,8 +17,8 @@ function toggleDarkMode() {
   }
 }
 
-function changeGrade() {
-  const dir = dirNames[this.selectedIndex];
+function changeGrade(event) {
+  const dir = dirNames[event.target.selectedIndex];
   location.href = `/spelling-variants-ja/${dir}/あ〜お/`;
 }
 
@@ -45,11 +45,9 @@ function search() {
   }
 }
 
-document.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    search();
-  }
-}, false);
+document.addEventListener("keydown", (event) => {
+  if (event.key == "Enter") search();
+});
 document.getElementById("toggleDarkMode").onclick = toggleDarkMode;
 document.getElementById("gradeOption").onchange = changeGrade;
 document.getElementById("search").onclick = search;

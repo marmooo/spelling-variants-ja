@@ -120,7 +120,6 @@ function toSection(mode, variants) {
       html += def;
       count += 1;
     }
-    if (yomi == "あいあい") console.log(html);
   });
   if (count == 0) {
     html += "<p>この年次に習う" + mode + "はありません。</p>";

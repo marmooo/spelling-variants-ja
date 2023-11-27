@@ -26,6 +26,9 @@ await build({
     Deno.copyFileSync("LICENSE", "npm/LICENSE");
     Deno.copyFileSync("README.md", "npm/README.md");
     Deno.copyFileSync("spelling-variants.csv", "npm/esm/spelling-variants.csv");
-    Deno.copyFileSync("spelling-variants.csv", "npm/script/spelling-variants.csv");
+    Deno.copyFileSync(
+      "spelling-variants.csv",
+      "npm/script/spelling-variants.csv",
+    );
   },
 });

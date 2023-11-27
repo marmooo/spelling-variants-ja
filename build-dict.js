@@ -7,7 +7,7 @@ const dicts = [
 ];
 
 function kanaToHira(str) {
-  return str.replace(/[ァ-ヶ]/g, function (match) {
+  return str.replace(/[ァ-ヶ]/g, (match) => {
     const chr = match.charCodeAt(0) - 0x60;
     return String.fromCharCode(chr);
   });
@@ -24,8 +24,14 @@ function getWord(line) {
   const word = arr[12];
   const abc = arr[14];
   if (leftId == "-1") return;
-  if (!/[\u4E00-\u9FFF々]/.test(surface)) return;
-  if (!/^[ぁ-ゖァ-ヶー\u4E00-\u9FFF々]+$/.test(surface)) return;
+  if (!/[\u3400-\u9FFF\uF900-\uFAFF\u{20000}-\u{2FFFF}々]/u.test(surface)) {
+    return;
+  }
+  if (
+    !/^[ぁ-ゖァ-ヶー\u3400-\u9FFF\uF900-\uFAFF\u{20000}-\u{2FFFF}々]+$/u.test(
+      surface,
+    )
+  ) return;
   if (pos1 == "名詞") {
     if (pos2 == "固有名詞") return;
     return [yomi, surface, word];

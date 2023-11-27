@@ -1,39 +1,31 @@
 import { readLines } from "https://deno.land/std/io/mod.ts";
 
 class SpellingVariantsJa {
-  static async fetch(url) {
-    const dict = await fetch(url)
-      .then((response) => response.text())
-      .then((text) => {
-        const d = {};
-        text.trimEnd().split("\n").forEach((line) => {
-          const arr = line.split(",");
-          const yomi = arr[0];
-          const word = arr[1];
-          const surfaces = arr.slice(2);
-          if (d[yomi]) {
-            d[yomi][word] = surfaces;
-          } else {
-            d[yomi] = {};
-            d[yomi][word] = surfaces;
-          }
-        });
-        return d;
-      }).catch((e) => {
-        console.log(e);
-      });
+  static async fetch(url, options) {
+    const response = await fetch(url, options);
+    const text = await response.text();
+    const dict = {};
+    text.trimEnd().split("\n").forEach((line) => {
+      const arr = line.split(",");
+      const yomi = arr[0];
+      const word = arr[1];
+      const surfaces = arr.slice(2);
+      if (d[yomi]) {
+        dict[yomi][word] = surfaces;
+      } else {
+        dict[yomi] = {};
+        dict[yomi][word] = surfaces;
+      }
+    });
     const spellingVariantsJa = new SpellingVariantsJa();
     spellingVariantsJa.dict = dict;
     return spellingVariantsJa;
   }
 
-  static async load(filepath) {
+  static async load(filepath, options) {
     const dict = {};
-    if (!filepath) {
-      filepath = "./spelling-variants-ja/spelling-variants.csv";
-    }
-    const fileReader = await Deno.open(filepath);
-    for await (const line of readLines(fileReader)) {
+    const file = await Deno.open(filepath, options);
+    for await (const line of readLines(file)) {
       const arr = line.split(",");
       const yomi = arr[0];
       const word = arr[1];
@@ -45,7 +37,7 @@ class SpellingVariantsJa {
         dict[yomi][word] = surfaces;
       }
     }
-    fileReader.close();
+    file.close();
     const spellingVariantsJa = new SpellingVariantsJa();
     spellingVariantsJa.dict = dict;
     return spellingVariantsJa;

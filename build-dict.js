@@ -24,11 +24,11 @@ function getWord(line) {
   const word = arr[12];
   const abc = arr[14];
   if (leftId == "-1") return;
-  if (!/[\u3400-\u9FFF\uF900-\uFAFF\u{20000}-\u{2FFFF}々]/u.test(surface)) {
+  if (!/[\u3400-\u9FFF\uF900-\uFAFF\u{20000}-\u{37FFF}々]/u.test(surface)) {
     return;
   }
   if (
-    !/^[ぁ-ゖァ-ヶー\u3400-\u9FFF\uF900-\uFAFF\u{20000}-\u{2FFFF}々]+$/u.test(
+    !/^[ぁ-ゖァ-ヶー\u3400-\u9FFF\uF900-\uFAFF\u{20000}-\u{37FFF}々]+$/u.test(
       surface,
     )
   ) return;

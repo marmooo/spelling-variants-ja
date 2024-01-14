@@ -1,6 +1,6 @@
 import { readLines } from "https://deno.land/std/io/mod.ts";
 import { Eta } from "https://deno.land/x/eta@v3.2.0/src/index.ts";
-import { JKAT, Kanji } from "npm:@marmooo/kanji@0.0.2";
+import { JKAT, Kanji } from "npm:@marmooo/kanji@0.0.8";
 
 const dirNames = [
   "小1",

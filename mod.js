@@ -1,4 +1,4 @@
-import { readLines } from "https://deno.land/std/io/mod.ts";
+import { TextLineStream } from "jsr:@std/streams/text-line-stream";
 
 class SpellingVariantsJa {
   static async fetch(url, options) {
@@ -25,7 +25,10 @@ class SpellingVariantsJa {
   static async load(filepath, options) {
     const dict = {};
     const file = await Deno.open(filepath, options);
-    for await (const line of readLines(file)) {
+    const lineStream = file.readable
+      .pipeThrough(new TextDecoderStream())
+      .pipeThrough(new TextLineStream());
+    for await (const line of lineStream) {
       const arr = line.split(",");
       const yomi = arr[0];
       const word = arr[1];
@@ -37,7 +40,6 @@ class SpellingVariantsJa {
         dict[yomi][word] = surfaces;
       }
     }
-    file.close();
     const spellingVariantsJa = new SpellingVariantsJa();
     spellingVariantsJa.dict = dict;
     return spellingVariantsJa;

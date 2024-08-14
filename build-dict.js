@@ -1,4 +1,4 @@
-import { readLines } from "https://deno.land/std/io/mod.ts";
+import { TextLineStream } from "jsr:@std/streams/text-line-stream";
 
 const outPath = "spelling-variants.csv";
 const dicts = [
@@ -44,8 +44,11 @@ function getWord(line) {
 }
 
 async function addData(path) {
-  const fileReader = await Deno.open(path);
-  for await (const line of readLines(fileReader)) {
+  const file = await Deno.open(path);
+  const lineStream = file.readable
+    .pipeThrough(new TextDecoderStream())
+    .pipeThrough(new TextLineStream());
+  for await (const line of lineStream) {
     if (!line) continue;
     const data = getWord(line);
     if (data && data[0] && data[1]) {

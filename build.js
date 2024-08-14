@@ -1,4 +1,4 @@
-import { readLines } from "https://deno.land/std/io/mod.ts";
+import { TextLineStream } from "jsr:@std/streams/text-line-stream";
 import { Eta } from "https://deno.land/x/eta@v3.4.0/src/index.ts";
 import { JKAT, Kanji } from "npm:@marmooo/kanji@0.0.8";
 
@@ -101,8 +101,11 @@ function selected(grade, index) {
 
 const jkat = new Kanji(JKAT);
 const variants = [];
-const fileReader = await Deno.open("spelling-variants.csv");
-for await (const line of readLines(fileReader)) {
+const file = await Deno.open("spelling-variants.csv");
+const lineStream = file.readable
+  .pipeThrough(new TextDecoderStream())
+  .pipeThrough(new TextLineStream());
+for await (const line of lineStream) {
   if (!line) continue;
   const arr = line.split(",");
   const yomi = arr[0];

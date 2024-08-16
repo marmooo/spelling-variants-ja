@@ -22,9 +22,9 @@ class SpellingVariantsJa {
     return spellingVariantsJa;
   }
 
-  static async load(filepath, options) {
+  static async load(filePath, options) {
     const dict = {};
-    const file = await Deno.open(filepath, options);
+    const file = await Deno.open(filePath, options);
     const lineStream = file.readable
       .pipeThrough(new TextDecoderStream())
       .pipeThrough(new TextLineStream());

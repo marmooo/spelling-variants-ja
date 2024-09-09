@@ -49,7 +49,6 @@ async function addData(path) {
     .pipeThrough(new TextDecoderStream())
     .pipeThrough(new TextLineStream());
   for await (const line of lineStream) {
-    if (!line) continue;
     const data = getWord(line);
     if (data && data[0] && data[1]) {
       const [yomi, surface, word] = data;

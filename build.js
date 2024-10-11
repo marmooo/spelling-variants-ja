@@ -1,5 +1,5 @@
 import { TextLineStream } from "jsr:@std/streams/text-line-stream";
-import { Eta } from "https://deno.land/x/eta@v3.4.0/src/index.ts";
+import { Eta } from "npm:eta@3.5.0";
 import { JKAT, Kanji } from "npm:@marmooo/kanji@0.0.8";
 
 const dirNames = [

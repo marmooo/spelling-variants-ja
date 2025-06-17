@@ -1,5 +1,5 @@
 import { SpellingVariantsJa } from "./mod.js";
-import { assertEquals } from "jsr:@std/assert/equals";
+import { assertEquals } from "@std/assert";
 
 Deno.test("Simple check", async () => {
   const dict = await SpellingVariantsJa.load("spelling-variants.csv");

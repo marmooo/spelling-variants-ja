@@ -1,6 +1,6 @@
-import { TextLineStream } from "jsr:@std/streams/text-line-stream";
-import { Eta } from "npm:eta@3.5.0";
-import { JKAT, Kanji } from "npm:@marmooo/kanji@0.0.8";
+import { TextLineStream } from "@std/streams";
+import { Eta } from "eta";
+import { JKAT, Kanji } from "@marmooo/kanji";
 
 const dirNames = [
   "小1",

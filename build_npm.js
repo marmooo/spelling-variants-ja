@@ -5,6 +5,10 @@ await emptyDir("./npm");
 await build({
   entryPoints: ["./mod.js"],
   outDir: "./npm",
+  typeCheck: false,
+  compilerOptions: {
+    lib: ["ESNext"],
+  },
   shims: {
     deno: true,
     custom: [{

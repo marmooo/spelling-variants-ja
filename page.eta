@@ -66,7 +66,7 @@
         <p><%= it.gradeName %>までの漢字で構成される [<%= it.akasataName %>] の表記ゆれ一覧です。</p>
       </div>
       <div class="card">
-        <div class="card-header"><%= it.gradeName %>の語順リスト</div>
+        <div class="card-header">語順リスト</div>
         <div class="card-body text-center notranslate">
           <%~ it.toNav(it.grade, it.akasataNames, it.dirNames) %>
         </div>
@@ -74,7 +74,7 @@
       <div class="card">
         <div class="card-header">表記ゆれ一覧</div>
         <div class="card-body d-flex flex-wrap">
-          <%~ it.toSection('表記ゆれ', it.variants) %>
+          <%~ it.toSection(it.variants) %>
         </div>
       </div>
     </main>

@@ -56,7 +56,7 @@ function toNav(grade, akasataNames) {
   return html;
 }
 
-function toSection(mode, variants) {
+function toSection(variants) {
   let html = "\n";
   let count = 0;
   variants.forEach((variant) => {
@@ -68,7 +68,7 @@ function toSection(mode, variants) {
     }
   });
   if (count == 0) {
-    html += "<p>この年次に習う" + mode + "はありません。</p>";
+    html += "<p>この年次に習う表記ゆれはありません。</p>";
   }
   return html;
 }
